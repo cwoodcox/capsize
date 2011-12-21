@@ -2,38 +2,25 @@ require "capsize/version"
 
 module Capsize
   extend ActiveSupport::Concern
-  DOWNCASE_FIELDS = []
-  TITLEIZE_FIELDS = []
-
+  
   module ClassMethods
     def downcase(*args)
-      set_callback :save, :before, :downcase!
       options = args.extract_options!
-    
-      args.each do |field|
-        Capsize::DOWNCASE_FIELDS << field
-      end
+      capsize!(:downcase, args, options)
     end
 
     def titleize(*args)
-      set_callback :save, :before, :titleize!
       options = args.extract_options!
+      capsize!(:titleize, args, options)
+    end
 
-      args.each do |field|
-        Capsize::TITLEIZE_FIELDS << field
+    private
+    def capsize!(method, attrs, options={})
+      attrs.each do |attribute|
+        set_callback :save, :before, lambda { |record|
+          record.send("#{attribute}=", record.send(attribute).send(method))
+        }
       end
-    end
-  end
-
-  def downcase!
-    DOWNCASE_FIELDS.each do |field|
-      self.send("#{field}=", self.send(field).downcase)
-    end
-  end
-
-  def titleize!
-    TITLEIZE_FIELDS.each do |field|
-      self.send("#{field}=", self.send(field).titleize)
     end
   end
 end
