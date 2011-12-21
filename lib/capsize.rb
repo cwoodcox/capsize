@@ -18,7 +18,7 @@ module Capsize
     def capsize!(method, attrs, options={})
       attrs.each do |attribute|
         set_callback :save, :before, lambda { |record|
-          record.send("#{attribute}=", record.send(attribute).send(method))
+          record.send("#{attribute}=", record.send(attribute).send(method)) if record.send(attribute).present?
         }
       end
     end
