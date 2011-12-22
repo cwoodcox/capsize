@@ -41,10 +41,10 @@ Once you've done that, you just configure the transformations you want on the at
       downcase :email
     end
 
-These examples to exactly what you think, they register a callback on the model that will run the titleize and downcase methods on the named
+These examples do exactly what you think, they register a callback on the model that will run the titleize and downcase methods on the named
 attributes before they are persisted to the database. I really don't know how it could be simpler, but you probably do.
 
 Who made this crap?
 ===================
 
-Me. Corey Woodcox. I work for [saxton|horne](http://saxtonhorne.com) and this was mostly on their time, so I suppose I should mention them.
+Me. [Corey Woodcox](http://zerp.ly/cwoodcox). I work for [saxton|horne](http://saxtonhorne.com) and this was mostly on their time, so I suppose I should mention them.
