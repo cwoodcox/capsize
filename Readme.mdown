@@ -14,13 +14,15 @@ It's simple, really.
 w/ Bundler
 ----------
 
-In your Gemfile: 
+In your Gemfile:
+
     gem 'capsize'
 
 no Bundler
 ----------
 
 In a terminal somewhere:
+
     gem install capsize
 
 How do I use this awesome?
