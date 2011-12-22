@@ -1,0 +1,48 @@
+What is this nonsense?
+======================
+
+Good question. Capsize is an ActiveSupport Concern that came about when replacing archaic software in the car sales industry. Old systems 
+often require that data be entered in ALL CAPS, for readability concerns, random hardware restrictions, or simply out of convention. We needed
+a quick way to transform existing data to fit a more sane standard, as well as a way to take the data entered by creatures of habit and make
+it look less like I'm being screamed at.
+
+How do I get at this goodness?
+==============================
+
+It's simple, really.
+
+w/ Bundler
+----------
+
+In your Gemfile: 
+    gem 'capsize'
+
+no Bundler
+----------
+
+In a terminal somewhere:
+    gem install capsize
+
+How do I use this awesome?
+==========================
+
+Also simple. You need to include the module in the models you want this functionality. This was all designed with ActiveRecord in mind, but
+should work in theory as long as you have getters and setters on your attributes, and ActiveSupport is available, but you haven't tested it,
+or submitted a patch for your use-case yet, so how should I know?!
+
+Once you've done that, you just configure the transformations you want on the attributes you want. Pretty easy. Right now only 2 are supported.
+
+    class Person < ActiveRecord::Base
+      include Capsize
+      
+      titleize :address, :city
+      downcase :email
+    end
+
+These examples to exactly what you think, they register a callback on the model that will run the titleize and downcase methods on the named
+attributes before they are persisted to the database. I really don't know how it could be simpler, but you probably do.
+
+Who made this crap?
+===================
+
+Me. Corey Woodcox. I work for [saxton|horne](http://saxtonhorne.com) and this was mostly on their time, so I suppose I should mention them.
