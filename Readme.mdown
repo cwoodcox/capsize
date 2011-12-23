@@ -47,4 +47,4 @@ attributes before they are persisted to the database. I really don't know how it
 Who made this crap?
 ===================
 
-Me. [Corey Woodcox](http://zerp.ly/cwoodcox). I work for [saxton|horne](http://saxtonhorne.com) and this was mostly on their time, so I suppose I should mention them.
+Me. [Corey Woodcox](http://zerp.ly/cwoodcox). I work for [saxton|horne](http://www.saxtonhorne.com) and this was mostly on their time, so I suppose I should mention them.
