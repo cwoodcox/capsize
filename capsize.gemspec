@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Corey Woodcox"]
   s.email       = ["corey.woodcox@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: ActiveModel hooks to apply text transformations to fields on save.}
-  s.description = %q{TODO: Don't like CAPSLOCK'd data in your app? Capsize is for you.}
+  s.summary     = %q{ActiveModel hooks to apply text transformations to fields on save.}
+  s.description = %q{Don't like CAPSLOCK'd data in your app? Capsize is for you.}
 
   s.rubyforge_project = "capsize"
 
